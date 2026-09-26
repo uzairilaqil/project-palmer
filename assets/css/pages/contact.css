@@ -1,0 +1,135 @@
+/* Contact Us page. */
+
+/* ---------- General contact strip ---------- */
+
+.contact-strip {
+  display: flex;
+  padding-block: 64px;
+  line-height: normal;
+}
+
+.contact-strip__item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding-inline: 40px;
+  border-right: 1px solid var(--border-line);
+}
+
+.contact-strip__item:first-child { padding-left: 0; }
+.contact-strip__item:last-child { border-right: 0; }
+
+.contact-strip__label,
+.location__label {
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.96px;
+  color: var(--brand-orange);
+}
+
+.contact-strip__value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-ink);
+}
+
+/* ---------- Locations ---------- */
+
+.locations-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.locations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 24px;
+}
+
+.location {
+  overflow: hidden;
+  background: var(--surface-white);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius);
+}
+
+.location__map {
+  display: block;
+  width: 100%;
+  height: 260px;
+  border: 0;
+  background: linear-gradient(126deg, #d1d9e0 0%, #e5ebf0 76.92%);
+}
+
+.location__body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 28px;
+}
+
+.location__label {
+  line-height: normal;
+}
+
+.location__name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--text-ink);
+}
+
+.location__address {
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.65;
+  color: var(--text-slate);
+}
+
+.location__phone {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  color: var(--text-ink);
+}
+
+.location .btn {
+  padding: 12px 22px;
+  font-size: 13px;
+}
+
+/* ---------- Enquiry form ---------- */
+
+.enquiry-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.enquiry-section textarea.input {
+  height: 105px;
+}
+
+.enquiry-section .form__actions .btn {
+  padding-inline: 30px;
+}
+
+@media (max-width: 1024px) {
+  .contact-strip { flex-direction: column; gap: 24px; padding-block: 48px; }
+  .contact-strip__item { padding: 0 0 24px; border-right: 0; border-bottom: 1px solid var(--border-line); }
+  .contact-strip__item:last-child { padding-bottom: 0; border-bottom: 0; }
+  .locations { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .contact-strip__value { font-size: 15px; overflow-wrap: anywhere; }
+  .location__body { padding: 22px; }
+  .location__map { height: 220px; }
+}

@@ -1,0 +1,223 @@
+/* Careers page. */
+
+/* ---------- Why join us ---------- */
+
+.why-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.why-list {
+  display: flex;
+  border-top: 1px solid var(--border-line);
+}
+
+.why-list__item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 28px 32px 0 0;
+}
+
+.why-list__num {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--brand-orange);
+}
+
+.why-list__title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--text-ink);
+}
+
+.why-list__text {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-slate);
+}
+
+/* ---------- Vacancies ---------- */
+
+.vacancies-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.vacancy-list {
+  border-top: 1px solid var(--border-line);
+}
+
+.vacancy {
+  border-bottom: 1px solid var(--border-line);
+}
+
+.vacancy__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-block: 26px;
+  list-style: none;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.vacancy__summary::-webkit-details-marker {
+  display: none;
+}
+
+.vacancy__heading {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.vacancy__title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-ink);
+}
+
+.vacancy__meta {
+  font-size: 13px;
+  color: var(--text-slate);
+}
+
+.vacancy__toggle {
+  flex-shrink: 0;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--brand-navy);
+  white-space: nowrap;
+  transition: color var(--ease);
+}
+
+.vacancy__summary:hover .vacancy__toggle {
+  color: var(--brand-orange);
+}
+
+.vacancy__toggle-close,
+.vacancy[open] .vacancy__toggle-open {
+  display: none;
+}
+
+.vacancy[open] .vacancy__toggle-close {
+  display: inline;
+}
+
+.vacancy__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 26px;
+  padding: 32px;
+  background: var(--surface-white);
+  border: 1px solid var(--border-line);
+  border-radius: var(--radius);
+}
+
+.vacancy__cols {
+  display: flex;
+  gap: 60px;
+}
+
+.vacancy__col {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.vacancy__col-title {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--text-ink);
+}
+
+.vacancy__bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vacancy__bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 310px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-slate);
+}
+
+.vacancy__bullets li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  background: var(--brand-orange);
+}
+
+.vacancy__footer {
+  font-size: 13px;
+  line-height: normal;
+  color: var(--text-slate);
+}
+
+/* ---------- Application ---------- */
+
+.apply-section {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.apply-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 860px;
+  padding: 28px;
+  background: var(--surface-offwhite);
+  border-radius: var(--radius);
+}
+
+.apply-success[hidden] {
+  display: none;
+}
+
+.apply-success__text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-ink);
+}
+
+.apply-success .btn {
+  padding: 13px 24px;
+}
+
+@media (max-width: 1024px) {
+  .why-list { flex-direction: column; }
+  .why-list__item { padding: 24px 0; border-bottom: 1px solid var(--border-line); }
+}
+
+@media (max-width: 640px) {
+  .vacancy__summary { flex-direction: column; align-items: flex-start; gap: 12px; padding-block: 22px; }
+  .vacancy__detail { padding: 22px; }
+  .vacancy__cols { flex-direction: column; gap: 24px; }
+}

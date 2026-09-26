@@ -1,0 +1,195 @@
+/* Our Fleet page. */
+
+/* ---------- Land / Marine tabs ---------- */
+
+.fleet-view {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-block: 90px;
+}
+
+.fleet-tabs {
+  display: flex;
+  width: fit-content;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.fleet-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 0 40px 16px 0;
+  background: none;
+  border: 0;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.64px;
+  color: var(--text-slate);
+  cursor: pointer;
+  transition: color var(--ease);
+}
+
+.fleet-tab::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: transparent;
+  transition: background-color var(--ease);
+}
+
+.fleet-tab:hover {
+  color: var(--brand-navy);
+}
+
+.fleet-tab[aria-selected="true"] {
+  font-weight: 700;
+  color: var(--brand-navy);
+}
+
+.fleet-tab[aria-selected="true"]::after {
+  background: var(--brand-orange);
+}
+
+.fleet-panel-view {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.fleet-panel-view[hidden] {
+  display: none;
+}
+
+.fleet-panel-view__media {
+  flex-shrink: 0;
+  width: 720px;
+  aspect-ratio: 720 / 420;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: linear-gradient(113deg, #0a1f42 0%, #17385e 80%);
+}
+
+.fleet-panel-view__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.fleet-panel-view__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.fleet-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  line-height: normal;
+}
+
+.fleet-stat__num {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--brand-navy);
+}
+
+.fleet-stat__caption {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-slate);
+}
+
+.fleet-panel-view__text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--text-slate);
+}
+
+.spec-list {
+  border-top: 1px solid var(--border-line);
+  font-size: 13.5px;
+  line-height: normal;
+}
+
+.spec-list__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 14px;
+  border-bottom: 1px solid var(--border-line);
+}
+
+.spec-list dt {
+  color: var(--text-slate);
+}
+
+.spec-list dd {
+  margin: 0;
+  font-weight: 600;
+  color: var(--text-ink);
+  text-align: right;
+}
+
+.fleet-panel-view__note {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--brand-orange);
+}
+
+/* ---------- Operations gallery ---------- */
+
+.gallery-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery__item {
+  height: 240px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: linear-gradient(118deg, #0a1f42 0%, #17385e 76.92%);
+}
+
+.gallery__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+@media (max-width: 1200px) {
+  .fleet-panel-view__media { width: 50%; }
+}
+
+@media (max-width: 1024px) {
+  .fleet-view { padding-block: 72px; }
+  .fleet-panel-view { flex-direction: column; gap: 32px; }
+  .fleet-panel-view__media { width: 100%; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .gallery__item { height: 200px; }
+}
+
+@media (max-width: 640px) {
+  .fleet-view { padding-block: 56px; gap: 28px; }
+  .fleet-tab { padding-right: 28px; font-size: 15px; }
+  .fleet-stat__num { font-size: 42px; }
+  .gallery { gap: 12px; }
+  .gallery__item { height: 130px; }
+}

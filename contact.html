@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Palmer Petroleum</title>
+  <meta name="description" content="Get in touch with Palmer Petroleum for service enquiries, partnerships or general information.">
+  <link rel="preload" href="assets/fonts/inter-latin-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/contact.css">
+  <script src="assets/js/include.js" defer></script>
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/wp.js" defer></script>
+  <script src="assets/js/content.js" defer></script>
+  <script src="assets/js/forms.js" defer></script>
+</head>
+<body data-page="contact">
+  <div class="slot-header" data-include="partials/header.html"></div>
+
+  <main id="main">
+
+    <section class="page-hero" style="--hero-height: 340px; --hero-top: 120px">
+      <img class="page-hero__bg" src="assets/img/hero-contact.jpg" alt="" style="object-position: center 64%">
+      <div class="page-hero__content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Contact Us</li>
+          </ol>
+        </nav>
+        <h1 class="page-hero__title">Contact Us</h1>
+        <p class="page-hero__text">Get in touch with Palmer Petroleum for service enquiries, partnerships or general information.</p>
+      </div>
+    </section>
+
+    <!-- General contact -->
+    <section class="section contact-strip" aria-label="General contact details">
+      <div class="contact-strip__item">
+        <p class="contact-strip__label">General Email</p>
+        <p class="contact-strip__value" data-field="general_email">[GENERAL EMAIL — CLIENT TO PROVIDE]</p>
+      </div>
+      <div class="contact-strip__item">
+        <p class="contact-strip__label">Phone</p>
+        <p class="contact-strip__value" data-field="general_phone">[PHONE — CLIENT TO PROVIDE]</p>
+      </div>
+      <div class="contact-strip__item">
+        <p class="contact-strip__label">Business Hours</p>
+        <p class="contact-strip__value" data-field="business_hours">[HOURS — CLIENT TO PROVIDE]</p>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="section section--tight section--offwhite locations-section" aria-labelledby="locations-title">
+      <div class="section__head">
+        <p class="eyebrow eyebrow--accent">OUR LOCATIONS</p>
+        <h2 class="section-title" id="locations-title">Where to find us.</h2>
+      </div>
+      <div class="locations">
+        <article class="location">
+          <iframe class="location__map" title="Map of Palmer Petroleum headquarters in Miri" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=Lot%203044%2C%20Off%20Jalan%20Pujut%207%2C%2098000%20Miri%2C%20Sarawak%2C%20Malaysia&amp;z=15&amp;output=embed"></iframe>
+          <div class="location__body">
+            <p class="location__label">HEADQUARTERS</p>
+            <h3 class="location__name">Palmer Petroleum (M) Sdn Bhd</h3>
+            <address class="location__address">Lot 3044, 1st Floor, Off Jalan Pujut 7,<br>98000 Miri, Sarawak, Malaysia</address>
+            <p class="location__phone" data-field="hq_phone">[HQ PHONE — CLIENT TO PROVIDE]</p>
+            <a class="btn btn--navy" href="https://www.google.com/maps/dir/?api=1&amp;destination=Lot%203044%2C%20Off%20Jalan%20Pujut%207%2C%2098000%20Miri%2C%20Sarawak%2C%20Malaysia" target="_blank" rel="noopener">Get Directions&nbsp;&nbsp;→</a>
+          </div>
+        </article>
+        <article class="location">
+          <iframe class="location__map" title="Map of Palmer Shipping branch office in Shah Alam" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=UOA%20Business%20Park%2C%20Jalan%20Pengaturcara%20U1%2F51A%2C%2040150%20Shah%20Alam%2C%20Selangor%2C%20Malaysia&amp;z=15&amp;output=embed"></iframe>
+          <div class="location__body">
+            <p class="location__label">BRANCH</p>
+            <h3 class="location__name">Palmer Shipping Sdn Bhd (1546127-P)</h3>
+            <address class="location__address">K03-05-3A, UOA Business Park,<br>Jalan Pengaturcara U1/51A,<br>40150 Shah Alam, Selangor, Malaysia</address>
+            <p class="location__phone" data-field="branch_phone">[BRANCH PHONE — CLIENT TO PROVIDE]</p>
+            <a class="btn btn--navy" href="https://www.google.com/maps/dir/?api=1&amp;destination=UOA%20Business%20Park%2C%20Jalan%20Pengaturcara%20U1%2F51A%2C%2040150%20Shah%20Alam%2C%20Selangor%2C%20Malaysia" target="_blank" rel="noopener">Get Directions&nbsp;&nbsp;→</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Enquiry form -->
+    <section class="section section--tight enquiry-section" aria-labelledby="enquiry-title">
+      <div class="section__head">
+        <p class="eyebrow eyebrow--accent">SEND AN ENQUIRY</p>
+        <h2 class="section-title" id="enquiry-title">Tell us how we can help.</h2>
+      </div>
+
+      <form class="form" data-cf7="enquiry">
+        <div class="field">
+          <label for="enq-name">Name</label>
+          <input class="input" id="enq-name" name="your-name" type="text" placeholder="Your full name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="enq-company">Company</label>
+          <input class="input" id="enq-company" name="company" type="text" placeholder="Company name" autocomplete="organization">
+        </div>
+        <div class="field">
+          <label for="enq-email">Email</label>
+          <input class="input" id="enq-email" name="your-email" type="email" placeholder="name@email.com" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="enq-phone">Phone</label>
+          <input class="input" id="enq-phone" name="phone" type="tel" placeholder="Phone number" autocomplete="tel">
+        </div>
+        <div class="field field--full">
+          <label for="enq-type">Enquiry Type</label>
+          <select class="input" id="enq-type" name="enquiry-type" required>
+            <option value="">Select enquiry type</option>
+            <option>Fuel Supply</option>
+            <option>Marine Bunkering</option>
+            <option>Land Transportation</option>
+            <option>Marine Support</option>
+            <option>Careers</option>
+            <option>General Enquiry</option>
+          </select>
+          <div class="chips" data-chips-for="enq-type" role="group" aria-label="Quick pick enquiry type">
+            <button class="chip" type="button" data-value="Fuel Supply">Fuel Supply</button>
+            <button class="chip" type="button" data-value="Marine Bunkering">Marine Bunkering</button>
+            <button class="chip" type="button" data-value="Land Transportation">Land Transportation</button>
+            <button class="chip" type="button" data-value="Marine Support">Marine Support</button>
+            <button class="chip" type="button" data-value="Careers">Careers</button>
+            <button class="chip" type="button" data-value="General Enquiry">General Enquiry</button>
+          </div>
+        </div>
+        <div class="field field--full">
+          <label for="enq-message">Message</label>
+          <textarea class="input" id="enq-message" name="your-message" required></textarea>
+        </div>
+        <div class="form__actions">
+          <button class="btn btn--orange" type="submit">Send Enquiry&nbsp;&nbsp;→</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <div data-include="partials/footer.html"></div>
+</body>
+</html>

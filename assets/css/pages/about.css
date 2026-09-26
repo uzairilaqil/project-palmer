@@ -1,0 +1,163 @@
+/* About Us page. */
+
+/* ---------- Company overview ---------- */
+
+.overview {
+  display: flex;
+  align-items: flex-start;
+  gap: 72px;
+}
+
+.overview__head {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.overview__head .section-title {
+  line-height: 1.22;
+}
+
+.overview__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  flex-shrink: 0;
+  width: 560px;
+  font-size: 15px;
+  line-height: 1.78;
+  color: var(--text-slate);
+}
+
+/* ---------- Timeline ---------- */
+
+.timeline-section {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.timeline {
+  display: flex;
+  border-top: 2px solid var(--border-line);
+}
+
+.timeline__item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 28px 28px 0 0;
+}
+
+.timeline__year {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--brand-orange);
+}
+
+.timeline__title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--text-ink);
+}
+
+.timeline__text {
+  font-size: 13.5px;
+  line-height: 1.62;
+  color: var(--text-slate);
+}
+
+/* ---------- Licences & leadership ---------- */
+
+.leadership-section {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.licences {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.licences__text {
+  max-width: 760px;
+  font-size: 14.5px;
+  line-height: 1.72;
+  color: var(--text-slate);
+}
+
+.leaders-head {
+  margin-bottom: -24px; /* design: 40px between heading and cards, section gap is 64px */
+}
+
+.leaders {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.leader {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px;
+  background: var(--surface-offwhite);
+}
+
+.leader__avatar {
+  width: 52px;
+  height: 52px;
+}
+
+.leader__name {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  color: var(--text-ink);
+}
+
+.leader__role {
+  font-size: 12.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--brand-navy);
+}
+
+.leader__bio {
+  font-size: 12.5px;
+  line-height: 1.58;
+  color: var(--text-slate);
+}
+
+@media (max-width: 1200px) {
+  .overview__body { width: 50%; }
+}
+
+@media (max-width: 1024px) {
+  .overview { flex-direction: column; gap: 28px; }
+  .overview__body { width: 100%; max-width: 680px; }
+  .timeline { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 24px; }
+  .timeline__item { padding-right: 0; padding-bottom: 28px; }
+  .leaders { grid-template-columns: repeat(2, 1fr); }
+  .leadership-section { gap: 56px; }
+}
+
+@media (max-width: 640px) {
+  .timeline { grid-template-columns: 1fr; }
+  .timeline__year { font-size: 22px; }
+  .leaders { grid-template-columns: 1fr; gap: 16px; }
+  .leadership-section { gap: 48px; }
+  .leaders-head { margin-bottom: -16px; }
+}
