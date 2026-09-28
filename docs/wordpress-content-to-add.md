@@ -104,7 +104,7 @@ Shown on the Home page under "Selected Operations".
 | Order | Title | Description | Featured image |
 |---|---|---|---|
 | 1 | *(existing)* Japanese Navy Ship Bunkering | *(already filled in)* | `op-japanese-navy.jpg` ← **add this, it's missing** |
-| 2 | Marine STS Bunkering — Borneo | Ad-hoc fuel sales via marine ship-to-ship (STS) bunkering across Borneo waters, including Sabah, Brunei and Sarawak. | `op-marine-sts.jpg` |
+| 2 | Marine STS Bunkering, Borneo | Ad-hoc fuel sales via marine ship-to-ship (STS) bunkering across Borneo waters, including Sabah, Brunei and Sarawak. | `op-marine-sts.jpg` |
 | 3 | Shell & PETRONAS Deliveries | Continued fuel-product deliveries associated with Shell and PETRONAS across the region. | `op-shell-petronas.jpg` |
 
 ---

@@ -48,7 +48,7 @@ async function loadSiteSettings() {
   }
   if (acf.land_incoming && acf.land_incoming_when) {
     setFleet("land-caption", `Land fuel transporters (${acf.land_incoming} more expected ${acf.land_incoming_when})`);
-    setFleet("land-incoming", `${acf.land_incoming} additional units — ${acf.land_incoming_when}`);
+    setFleet("land-incoming", `${acf.land_incoming} additional units, ${acf.land_incoming_when}`);
   }
   setFleet("land-use", acf.land_use);
 
@@ -73,7 +73,7 @@ async function loadVacancies() {
   if (posts === null) return; // WordPress unreachable: keep the example vacancies.
 
   if (posts.length === 0) {
-    list.innerHTML = `<p style="padding-block:26px;color:var(--text-slate)">No open positions right now — please check back soon.</p>`;
+    list.innerHTML = `<p style="padding-block:26px;color:var(--text-slate)">No open positions right now. Please check back soon.</p>`;
     return;
   }
   list.innerHTML = posts.map(vacancyHtml).join("");

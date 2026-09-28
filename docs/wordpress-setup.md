@@ -260,7 +260,7 @@ Use the text currently on the website as the starting point, and keep any `[To b
 
 - [ ] **Vacancies:** Truck Operator, Marine Crew, Operations Clerk (3 posts)
 - [ ] **Services:** 01 to 05, with photos (5 posts). Use new, properly licensed photos where possible. Service 01's current photo has a Shutterstock watermark.
-- [ ] **Operations:** Japanese Navy Ship Bunkering, Marine STS Bunkering — Borneo, Shell & PETRONAS Deliveries (3 posts). **Confirm the client has permission to name these customers before publishing.**
+- [ ] **Operations:** Japanese Navy Ship Bunkering, Marine STS Bunkering, Borneo, Shell & PETRONAS Deliveries (3 posts). **Confirm the client has permission to name these customers before publishing.**
 - [ ] **Leaders:** Ngu Xiang Kai, Chendra Lingesh, Jeremiah Michael, Lee Kah Jee (4 posts)
 - [ ] **Site Settings:** fill in the fleet numbers; contact details when the client provides them
 
