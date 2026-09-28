@@ -7,7 +7,7 @@ After setup, the client can edit these in wp-admin:
 | Content | Where it appears |
 |---|---|
 | Job vacancies | Careers page |
-| Fleet numbers and specs | Our Fleet page, Home page |
+| Fleet numbers and specs | Our Fleets page, Home page |
 | Phone numbers, emails, business hours | Contact page, footer |
 | Services | Services page, Home page |
 | Selected operations | Home page |
