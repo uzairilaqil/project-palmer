@@ -70,6 +70,16 @@ const FEATURES = {
       new MutationObserver(() => revealChildren(group)).observe(group, { childList: true });
     });
 
+    // Keyboard users can Tab onto a link or button before it has scrolled
+    // into view. Reveal it the moment it (or anything inside it) gets focus,
+    // so a focus outline never lands on something still invisible.
+    document.addEventListener("focusin", (e) => {
+      const hidden = e.target.closest(".reveal:not(.is-visible)");
+      if (!hidden) return;
+      hidden.classList.add("is-visible");
+      observer.unobserve(hidden);
+    });
+
     document.querySelectorAll(SECTION_SELECTOR).forEach((section) => {
       if (handled.has(section) || section.classList.contains("reveal")) return;
       if (section.closest(".hero") || section.classList.contains("hero")) return;
@@ -166,6 +176,53 @@ const FEATURES = {
     requestAnimationFrame(frame);
   }
 
+  // Job details slide open/closed. Animates the whole <details> element's
+  // real measured height with the Web Animations API, so it works in every
+  // current browser (Chrome, Edge, Safari, Firefox). Listens at page level
+  // because content.js replaces the job list with WordPress entries after
+  // load. Keyboard users get the same behaviour: Enter/Space on a summary
+  // fires the same click.
+  function runAccordion() {
+    const EASE = "cubic-bezier(0.22, 1, 0.36, 1)";
+    const DURATION = 350;
+
+    document.addEventListener("click", (e) => {
+      const summary = e.target.closest(".vacancy > summary");
+      if (!summary) return;
+      const details = summary.parentElement;
+      e.preventDefault();
+
+      const running = details._accordion;
+      const startHeight = details.getBoundingClientRect().height;
+      if (running) running.cancel();
+
+      const opening = !details.open || details.dataset.closing === "true";
+      let endHeight;
+      if (opening) {
+        details.dataset.closing = "false";
+        details.open = true;
+        endHeight = details.getBoundingClientRect().height;
+      } else {
+        details.dataset.closing = "true";
+        const borders = details.offsetHeight - details.clientHeight;
+        endHeight = summary.getBoundingClientRect().height + borders;
+      }
+
+      details.style.overflow = "hidden";
+      const anim = details.animate(
+        [{ height: `${startHeight}px` }, { height: `${endHeight}px` }],
+        { duration: DURATION, easing: EASE }
+      );
+      details._accordion = anim;
+      anim.onfinish = () => {
+        if (!opening) details.open = false;
+        details.dataset.closing = "false";
+        details.style.overflow = "";
+        details._accordion = null;
+      };
+    });
+  }
+
   // Fleet tabs: fade a panel in the moment tabs.js actually reveals it.
   // Watches the "hidden" attribute directly instead of the click, so this
   // stays correct regardless of which listener (tabs.js's or this one)
@@ -202,6 +259,9 @@ const FEATURES = {
     if (FEATURES.parallax) runParallax();
     if (FEATURES.counters) runCounters();
     if (FEATURES.tabs) runTabTransition();
-    // accordion and formFade are pure CSS, switched by the class above.
+    // formFade is pure CSS, switched by the class above.
   });
+
+  // Listens at page level, so it doesn't need to wait for the header/footer.
+  if (FEATURES.accordion) runAccordion();
 })();

@@ -72,21 +72,16 @@
 }
 
 /* ---------- Smooth open/close for job details (feature: accordion) ---------- */
-/* Uses the browser's own hook for <details> content. Browsers that don't
-   support it open and close instantly, as before. */
+/* Animated by motion.js (measures the real height, works in every browser).
+   While a job is closing it's still technically [open], so switch the label
+   back to "View Details" straight away instead of at the end. */
 
-.motion-accordion {
-  interpolate-size: allow-keywords;
+.motion-accordion .vacancy[data-closing="true"] .vacancy__toggle-open {
+  display: inline;
 }
 
-.motion-accordion .vacancy::details-content {
-  block-size: 0;
-  overflow: hidden;
-  transition: block-size 0.35s cubic-bezier(0.22, 1, 0.36, 1), content-visibility 0.35s allow-discrete;
-}
-
-.motion-accordion .vacancy[open]::details-content {
-  block-size: auto;
+.motion-accordion .vacancy[data-closing="true"] .vacancy__toggle-close {
+  display: none;
 }
 
 /* ---------- Fade between Land / Marine fleet tabs (feature: tabs) ---------- */
