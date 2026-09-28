@@ -11,7 +11,7 @@ function initForm(form) {
   function showStatus(message, type) {
     if (!status) return;
     status.textContent = message;
-    status.className = `form-status form-status--${type}`;
+    status.className = `form-status form-status--${type}${message ? " is-visible" : ""}`;
   }
 
   function clearInvalid() {
