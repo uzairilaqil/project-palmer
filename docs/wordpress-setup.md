@@ -160,6 +160,14 @@ Contact page's General Email/Phone strip, all from these same three fields.
 | Bunkering Email | `branch_email_bunkering` | Email | `bunker@palmerpetroleum.com` |
 | Chartering Email | `branch_email_chartering` | Email | `charter@palmerpetroleum.com` |
 | Careers Email | `careers_email` | Email | *(client to provide)* |
+| Hero Photo: Marine Bunkering | `hero_photo_marine_bunkering` | Image | *(optional)* |
+| Hero Photo: Land Fuel Transport | `hero_photo_land_fuel_transport` | Image | *(optional)* |
+| Hero Photo: Petroleum Supply | `hero_photo_petroleum_supply` | Image | *(optional)* |
+| Hero Photo: Marine Support | `hero_photo_marine_support` | Image | *(optional)* |
+
+The four hero photo fields change the Home page slideshow. Leave any of them
+empty to keep that slide's built-in photo. Use landscape photos at least
+2000px wide, since they fill the whole screen.
 | Land Fleet: Units | `land_units` | Number | `10` |
 | Land Fleet: Incoming Units | `land_incoming` | Number | `4` |
 | Land Fleet: Incoming When | `land_incoming_when` | Text | `Q4 2025` |
