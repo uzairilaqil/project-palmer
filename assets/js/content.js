@@ -17,6 +17,7 @@ document.addEventListener("partials:loaded", () => {
   loadOperations();
   loadLeaders();
   loadVessels();
+  loadHeroPhotos();
 });
 
 // ---------- Site Settings (contact details + fleet numbers) ----------
@@ -282,4 +283,25 @@ function vesselHtml(post) {
         ${dwt}
       </div>
     </li>`;
+}
+
+// ---------- Home: hero carousel photos ----------
+// Until the 4 hero_photo_* fields exist in Site Settings, this ACF field
+// simply isn't in the response, so every slide keeps its built-in photo.
+
+async function loadHeroPhotos() {
+  const targets = document.querySelectorAll("[data-hero-photo]");
+  if (!targets.length) return;
+
+  const pages = await WP.get("pages?slug=site-settings&_fields=acf");
+  const acf = pages && pages[0] && pages[0].acf;
+  if (!acf) return;
+
+  targets.forEach((img) => {
+    const field = acf[`hero_photo_${img.dataset.heroPhoto}`];
+    // ACF Image fields return a plain URL, or an object/array with a "url"
+    // property, depending on the field's "Return Format" setting — handle both.
+    const url = typeof field === "string" ? field : field && field.url;
+    if (url) img.src = url;
+  });
 }
