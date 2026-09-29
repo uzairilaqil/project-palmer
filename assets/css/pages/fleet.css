@@ -178,6 +178,16 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* The photo grows slightly inside its frame, so the card and the cards
+   around it never move. Only for devices with a real cursor: on a phone a
+   tap would otherwise leave the photo stuck zoomed. */
+@media (hover: hover) {
+  .vessel-card:hover .vessel-card__media img {
+    transform: scale(1.08);
+  }
 }
 
 /* Shown until a vessel has its own photo. */
