@@ -36,6 +36,16 @@
   color: var(--text-ink);
 }
 
+/* When an item shows two lines (e.g. two emails) instead of one value,
+   drop to the location card's smaller size so both fit comfortably. */
+.contact-strip__value--stack {
+  font-size: 14px;
+}
+
+.contact-strip__item:has(.contact-strip__value--stack) {
+  gap: 4px;
+}
+
 /* ---------- Locations ---------- */
 
 .locations-section {
