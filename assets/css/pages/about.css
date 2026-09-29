@@ -41,16 +41,32 @@
 
 .timeline {
   display: flex;
-  border-top: 2px solid var(--border-line);
+  /* Darker than the page's usual hairlines so the line reads clearly. */
+  border-top: 2px solid rgba(14, 46, 92, 0.3);
 }
 
 .timeline__item {
+  position: relative;
   display: flex;
   flex: 1;
   flex-direction: column;
   gap: 12px;
   min-width: 0;
-  padding: 28px 28px 0 0;
+  padding: 34px 28px 0 0;
+}
+
+/* One dot per milestone, sitting on the line above its year. The ring in the
+   section's own background colour makes the dot look threaded onto the line. */
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--brand-orange);
+  box-shadow: 0 0 0 4px var(--surface-offwhite);
 }
 
 .timeline__year {
@@ -148,14 +164,16 @@
 @media (max-width: 1024px) {
   .overview { flex-direction: column; gap: 28px; }
   .overview__body { width: 100%; max-width: 680px; }
-  .timeline { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 24px; }
-  .timeline__item { padding-right: 0; padding-bottom: 28px; }
+  /* Stacked, the line runs down the left with the dots on it. */
+  .timeline { flex-direction: column; border-top: 0; border-left: 2px solid rgba(14, 46, 92, 0.3); }
+  .timeline__item { padding: 0 0 32px 28px; }
+  .timeline__item:last-child { padding-bottom: 0; }
+  .timeline__item::before { top: 9px; left: -8px; }
   .leaders { grid-template-columns: repeat(2, 1fr); }
   .leadership-section { gap: 56px; }
 }
 
 @media (max-width: 640px) {
-  .timeline { grid-template-columns: 1fr; }
   .timeline__year { font-size: 22px; }
   .leaders { grid-template-columns: 1fr; gap: 16px; }
   .leadership-section { gap: 48px; }
