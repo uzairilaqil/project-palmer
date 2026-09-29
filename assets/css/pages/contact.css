@@ -93,11 +93,17 @@
   color: var(--text-slate);
 }
 
+.location__email,
 .location__phone {
   font-size: 14px;
   font-weight: 600;
   line-height: normal;
   color: var(--text-ink);
+}
+
+.location__email-label {
+  font-weight: 500;
+  color: var(--text-slate);
 }
 
 .location .btn {
