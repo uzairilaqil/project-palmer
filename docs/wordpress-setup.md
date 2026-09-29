@@ -148,13 +148,17 @@ Name = post **Title**. Photo (optional) = **Featured Image**. Without a photo, t
 ### 4e. Site Settings
 Location: **Page** is equal to **Site Settings**
 
-| Label | Field Name | Field Type | Current value (from the design) |
+HQ and Branch share one phone number and one pair of emails, so there's no
+separate `hq_phone`/`hq_email` field — the site shows `branch_phone` and the
+two `branch_email_*` fields on the HQ card, the Branch card, and the
+Contact page's General Email/Phone strip, all from these same three fields.
+
+| Label | Field Name | Field Type | Current value |
 |---|---|---|---|
-| General Email | `general_email` | Email | *(client to provide)* |
-| General Phone | `general_phone` | Text | *(client to provide)* |
-| Business Hours | `business_hours` | Text | *(client to provide)* |
-| HQ Phone | `hq_phone` | Text | *(client to provide)* |
-| Branch Phone | `branch_phone` | Text | *(client to provide)* |
+| Business Hours | `business_hours` | Text | `8 AM - 6 PM` |
+| Branch/HQ Phone | `branch_phone` | Text | `03-5569 0765` |
+| Bunkering Email | `branch_email_bunkering` | Email | `bunker@palmerpetroleum.com` |
+| Chartering Email | `branch_email_chartering` | Email | `charter@palmerpetroleum.com` |
 | Careers Email | `careers_email` | Email | *(client to provide)* |
 | Land Fleet: Units | `land_units` | Number | `10` |
 | Land Fleet: Incoming Units | `land_incoming` | Number | `4` |
@@ -278,7 +282,7 @@ Open these addresses in a browser. Each should show text starting with `[` or `{
 |---|---|---|
 | Vacancies | `https://cms.palmershipping.com/wp-json/wp/v2/vacancies` | `"acf":{"department":...` |
 | Services | `https://cms.palmershipping.com/wp-json/wp/v2/services` | `"acf":{"number":...` |
-| Site Settings | `https://cms.palmershipping.com/wp-json/wp/v2/pages?slug=site-settings` | `"acf":{"general_email":...` |
+| Site Settings | `https://cms.palmershipping.com/wp-json/wp/v2/pages?slug=site-settings` | `"acf":{"branch_phone":...` |
 | Forms plugin | `https://cms.palmershipping.com/wp-json/` | `contact-form-7/v1` in the list |
 
 **If `"acf"` is missing or shows `[]`**, the field group's **Show in REST API** setting is off (Step 4). **If you get "rest_no_route"**, the post type's **Show In REST API** is off, or the Base URL is different (Step 2).
