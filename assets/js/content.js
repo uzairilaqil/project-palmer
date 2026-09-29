@@ -272,7 +272,7 @@ function vesselHtml(post) {
     ? `<div class="vessel-card__media"><img src="${img}" alt="The ${WP.escape(name)} tanker" loading="lazy"></div>`
     : `<div class="vessel-card__media vessel-card__media--empty"><span>Photo to come</span></div>`;
   const dwt = a.dwt
-    ? `<p class="vessel-card__spec"><span class="vessel-card__label">DWT</span> ${WP.escape(formatDwt(a.dwt))} metric tons</p>`
+    ? `<p class="vessel-card__spec">${WP.escape(formatDwt(a.dwt))} Load Capacity &ndash; DWT (metric tons)</p>`
     : "";
   return `
     <li class="vessel-card">
