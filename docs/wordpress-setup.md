@@ -160,14 +160,35 @@ Contact page's General Email/Phone strip, all from these same three fields.
 | Bunkering Email | `branch_email_bunkering` | Email | `bunker@palmerpetroleum.com` |
 | Chartering Email | `branch_email_chartering` | Email | `charter@palmerpetroleum.com` |
 | Careers Email | `careers_email` | Email | *(client to provide)* |
-| Hero Photo: Marine Bunkering | `hero_photo_marine_bunkering` | Image | *(optional)* |
-| Hero Photo: Land Fuel Transport | `hero_photo_land_fuel_transport` | Image | *(optional)* |
-| Hero Photo: Petroleum Supply | `hero_photo_petroleum_supply` | Image | *(optional)* |
-| Hero Photo: Marine Support | `hero_photo_marine_support` | Image | *(optional)* |
+### 4f. Site Photos (import, don't build by hand)
+22 image fields that change the photos across the site: the Home slideshow,
+the Home page sections, the 5 page banners, and the Our Fleets tab photos and
+gallery. Empty fields keep the built-in photo.
 
-The four hero photo fields change the Home page slideshow. Leave any of them
-empty to keep that slide's built-in photo. Use landscape photos at least
-2000px wide, since they fill the whole screen.
+Rather than creating them one by one:
+1. **ACF → Tools → Import**
+2. Choose `docs/acf/palmer-acf-import.json` from this project and click **Import JSON**
+3. This creates two field groups:
+   - **Site Photos**, on the Site Settings page, in 4 tabs (Home slideshow, Home page, Page banners, Our Fleets page)
+   - **Vessel Details**, with the `dwt` field for the Vessel type in 4g
+
+The Site Photos group is tied to the Site Settings page by its ID (15). If
+WordPress is ever reinstalled and that page gets a new ID, edit the group's
+Location rule to point at the new Site Settings page.
+
+### 4g. Vessels
+Create a post type the same way as in Step 2:
+
+| Plural label | Singular label | Post Type Key | REST Base URL |
+|---|---|---|---|
+| Vessels | Vessel | `vessel` | `vessels` |
+
+Tick **Title**, **Featured Image** and **Page Attributes**, and turn on
+**Show In REST API**. The `dwt` field comes from the import in 4f.
+
+Each vessel: name in the **Title**, load capacity in **DWT**, photo as the
+**Featured Image**, position set by **Order**. Until at least one vessel is
+published, the Our Fleets page keeps its built-in list of 6.
 | Land Fleet: Units | `land_units` | Number | `10` |
 | Land Fleet: Incoming Units | `land_incoming` | Number | `4` |
 | Land Fleet: Incoming When | `land_incoming_when` | Text | `Q4 2025` |

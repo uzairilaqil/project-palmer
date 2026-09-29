@@ -17,15 +17,24 @@ document.addEventListener("partials:loaded", () => {
   loadOperations();
   loadLeaders();
   loadVessels();
-  loadHeroPhotos();
+  loadSitePhotos();
 });
+
+// Site Settings is used by several loaders; fetch it once and share it.
+// acf_format=standard makes ACF send image fields as full image data
+// instead of a bare attachment ID.
+let siteSettingsRequest;
+function getSiteSettings() {
+  siteSettingsRequest ||= WP.get("pages?slug=site-settings&_fields=acf&acf_format=standard")
+    .then((pages) => (pages && pages[0] && pages[0].acf) || null);
+  return siteSettingsRequest;
+}
 
 // ---------- Site Settings (contact details + fleet numbers) ----------
 // Used by: footer (every page), Contact page, Fleet page, Home page.
 
 async function loadSiteSettings() {
-  const pages = await WP.get("pages?slug=site-settings&_fields=acf");
-  const acf = pages && pages[0] && pages[0].acf;
+  const acf = await getSiteSettings();
   if (!acf) return; // Unreachable, or the Site Settings page/fields aren't set up yet.
 
   // Plain 1:1 fields: anything with data-field="general_email" etc. gets that
@@ -285,22 +294,23 @@ function vesselHtml(post) {
     </li>`;
 }
 
-// ---------- Home: hero carousel photos ----------
-// Until the 4 hero_photo_* fields exist in Site Settings, this ACF field
-// simply isn't in the response, so every slide keeps its built-in photo.
+// ---------- Site photos (every page) ----------
+// Any <img data-photo="field_name"> is swapped for that Site Settings image
+// field when one has been uploaded. Empty fields, or WordPress being
+// unreachable, leave the built-in photo in place.
 
-async function loadHeroPhotos() {
-  const targets = document.querySelectorAll("[data-hero-photo]");
+async function loadSitePhotos() {
+  const targets = document.querySelectorAll("[data-photo]");
   if (!targets.length) return;
 
-  const pages = await WP.get("pages?slug=site-settings&_fields=acf");
-  const acf = pages && pages[0] && pages[0].acf;
+  const acf = await getSiteSettings();
   if (!acf) return;
 
   targets.forEach((img) => {
-    const field = acf[`hero_photo_${img.dataset.heroPhoto}`];
-    // ACF Image fields return a plain URL, or an object/array with a "url"
-    // property, depending on the field's "Return Format" setting — handle both.
+    const field = acf[img.dataset.photo];
+    // Image fields arrive as a URL or as an object with a "url", depending on
+    // the field's Return Format setting. A bare number means the image data
+    // wasn't included, so leave the built-in photo alone.
     const url = typeof field === "string" ? field : field && field.url;
     if (url) img.src = url;
   });
