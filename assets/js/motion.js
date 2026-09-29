@@ -32,7 +32,7 @@ const FEATURES = {
   const STAGGER_GROUPS = [
     ".service-list", ".sector-list", ".op-cards", ".fleet-panels",
     ".leaders", ".gallery", ".timeline", ".why-list", ".locations",
-    ".vacancy-list", "#service-blocks",
+    ".vacancy-list", "#service-blocks", "#vessel-list",
   ];
   // Everything else that should fade in as a single unit on scroll.
   const SECTION_SELECTOR = ".section, .safety, .cta-band";

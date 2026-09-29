@@ -16,6 +16,7 @@ document.addEventListener("partials:loaded", () => {
   loadServices();
   loadOperations();
   loadLeaders();
+  loadVessels();
 });
 
 // ---------- Site Settings (contact details + fleet numbers) ----------
@@ -240,5 +241,45 @@ function leaderHtml(post) {
       <h3 class="leader__name">${WP.escape(title)}</h3>
       <p class="leader__role">${WP.escape(a.role || "")}</p>
       <p class="leader__bio">${WP.escape(a.bio || "")}</p>
+    </li>`;
+}
+
+// ---------- Our Fleets: vessels ----------
+// Until the "vessel" post type exists in WordPress, the REST endpoint 404s,
+// WP.get returns null, and the 6 vessels written into fleet.html stay as is.
+
+async function loadVessels() {
+  const list = document.getElementById("vessel-list");
+  if (!list) return;
+
+  const posts = await WP.get("vessels?orderby=menu_order&order=asc&per_page=50&_embed");
+  if (posts === null || posts.length === 0) return; // Keep the built-in vessel list.
+  list.innerHTML = posts.map(vesselHtml).join("");
+}
+
+// "2772.29" -> "2,772.29"; leaves anything non-numeric as typed.
+function formatDwt(value) {
+  const n = Number(String(value).replace(/,/g, ""));
+  if (!value || Number.isNaN(n)) return value || "";
+  return n.toLocaleString("en-US", { maximumFractionDigits: 2 });
+}
+
+function vesselHtml(post) {
+  const a = post.acf || {};
+  const name = WP.decode(post.title.rendered);
+  const img = WP.image(post);
+  const media = img
+    ? `<div class="vessel-card__media"><img src="${img}" alt="The ${WP.escape(name)} tanker" loading="lazy"></div>`
+    : `<div class="vessel-card__media vessel-card__media--empty"><span>Photo to come</span></div>`;
+  const dwt = a.dwt
+    ? `<p class="vessel-card__spec"><span class="vessel-card__label">DWT</span> ${WP.escape(formatDwt(a.dwt))} metric tons</p>`
+    : "";
+  return `
+    <li class="vessel-card">
+      ${media}
+      <div class="vessel-card__body">
+        <h3 class="vessel-card__name">${WP.escape(name)}</h3>
+        ${dwt}
+      </div>
     </li>`;
 }
