@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Our Fleets | Palmer Petroleum</title>
-  <meta name="description" content="Palmer Petroleum's land fuel transporters and oil tanker vessels supporting fuel delivery across Sarawak and the wider Borneo region.">
+  <meta name="description"
+    content="Palmer Petroleum's land fuel transporters and oil tanker vessels supporting fuel delivery across Sarawak and the wider Borneo region.">
   <link rel="preload" href="assets/fonts/inter-latin-500.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/space-grotesk-latin-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/tokens.css">
@@ -19,13 +21,15 @@
   <script src="assets/js/wp.js" defer></script>
   <script src="assets/js/content.js" defer></script>
 </head>
+
 <body data-page="fleet">
   <div class="slot-header" data-include="partials/header.html"></div>
 
   <main id="main">
 
     <section class="page-hero" style="--hero-height: 400px; --hero-top: 150px">
-      <img class="page-hero__bg" src="assets/img/hero-fleet.jpg" alt="" style="object-position: center 56%" data-photo="banner_fleet">
+      <img class="page-hero__bg" src="assets/img/hero-fleet.jpg" alt="" style="object-position: center 56%"
+        data-photo="banner_fleet">
       <div class="page-hero__content">
         <nav class="breadcrumb" aria-label="Breadcrumb">
           <ol>
@@ -34,15 +38,18 @@
           </ol>
         </nav>
         <h1 class="page-hero__title">Our Fleets</h1>
-        <p class="page-hero__text">Land and marine assets supporting dependable fuel delivery across Palmer Petroleum's operations.</p>
+        <p class="page-hero__text">Land and marine assets supporting dependable fuel delivery across Palmer Petroleum's
+          operations.</p>
       </div>
     </section>
 
     <!-- Land / Marine fleet -->
     <section class="section fleet-view" data-tabs aria-label="Fleet overview">
       <div class="fleet-tabs" role="tablist" aria-label="Fleet type">
-        <button class="fleet-tab" type="button" role="tab" id="tab-land" aria-controls="panel-land" aria-selected="true">LAND FLEET</button>
-        <button class="fleet-tab" type="button" role="tab" id="tab-marine" aria-controls="panel-marine" aria-selected="false" tabindex="-1">MARINE FLEET</button>
+        <button class="fleet-tab" type="button" role="tab" id="tab-land" aria-controls="panel-land"
+          aria-selected="true">LAND FLEET</button>
+        <button class="fleet-tab" type="button" role="tab" id="tab-marine" aria-controls="panel-marine"
+          aria-selected="false" tabindex="-1">MARINE FLEET</button>
       </div>
 
       <div class="fleet-panel-view" role="tabpanel" id="panel-land" aria-labelledby="tab-land" tabindex="0">
@@ -52,33 +59,62 @@
         <div class="fleet-panel-view__body">
           <div class="fleet-stat">
             <p class="fleet-stat__num" data-fleet="land-count">10 +4</p>
-            <p class="fleet-stat__caption" data-fleet="land-caption">Land fuel transporters (4 more expected Q4 2025)</p>
+            <p class="fleet-stat__caption" data-fleet="land-caption">Land fuel transporters (4 more expected Q4 2025)
+            </p>
           </div>
-          <p class="fleet-panel-view__text">A fleet of land fuel transporter trucks of various sizes, delivering to industrial, commercial and project sites across the region.</p>
+          <p class="fleet-panel-view__text">A fleet of land fuel transporter trucks of various sizes, delivering to
+            industrial, commercial and project sites across the region.</p>
           <dl class="spec-list">
-            <div class="spec-list__row"><dt>Type</dt><dd>Land fuel transporter trucks</dd></div>
-            <div class="spec-list__row"><dt>Fleet size</dt><dd data-fleet="land-fleet-size">10 units (various sizes)</dd></div>
-            <div class="spec-list__row"><dt>Incoming</dt><dd data-fleet="land-incoming">4 additional units, Q4 2025</dd></div>
-            <div class="spec-list__row"><dt>Operational use</dt><dd data-fleet="land-use">Industrial, commercial &amp; project delivery</dd></div>
+            <div class="spec-list__row">
+              <dt>Type</dt>
+              <dd>Land fuel transporter trucks</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>Fleet size</dt>
+              <dd data-fleet="land-fleet-size">10 units (various sizes)</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>Incoming</dt>
+              <dd data-fleet="land-incoming">4 additional units, Q4 2025</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>Operational use</dt>
+              <dd data-fleet="land-use">Industrial, commercial &amp; project delivery</dd>
+            </div>
           </dl>
         </div>
       </div>
 
       <div class="fleet-panel-view" role="tabpanel" id="panel-marine" aria-labelledby="tab-marine" tabindex="0" hidden>
         <div class="fleet-panel-view__media">
-          <img src="assets/img/fleet-marine.jpg" alt="Oil tanker vessels at sea" loading="lazy" data-photo="fleet_marine_photo">
+          <img src="assets/img/fleet-marine.jpg" alt="Oil tanker vessels at sea" loading="lazy"
+            data-photo="fleet_marine_photo">
         </div>
         <div class="fleet-panel-view__body">
           <div class="fleet-stat">
             <p class="fleet-stat__num" data-fleet="marine-count">14</p>
-            <p class="fleet-stat__caption" data-fleet="marine-caption">Oil tanker vessels (chartered &amp; self-owned)</p>
+            <p class="fleet-stat__caption" data-fleet="marine-caption">Oil/Chemical tankers (chartered &amp; self-owned)
+            </p>
           </div>
-          <p class="fleet-panel-view__text">Oil tanker vessels of different classes supporting bunkering and marine fuel delivery across Sarawak and the wider Borneo region.</p>
+          <p class="fleet-panel-view__text">Oil tanker vessels of different classes supporting bunkering and marine fuel
+            delivery across Sarawak and the wider Borneo region.</p>
           <dl class="spec-list">
-            <div class="spec-list__row"><dt>Type</dt><dd>Oil tanker vessels</dd></div>
-            <div class="spec-list__row"><dt>Fleet size</dt><dd data-fleet="marine-fleet-size">14 vessels</dd></div>
-            <div class="spec-list__row"><dt>Capacity range</dt><dd data-fleet="marine-capacity">≈ 350,000 L to 3 million L</dd></div>
-            <div class="spec-list__row"><dt>Ownership</dt><dd data-fleet="marine-ownership">Chartered &amp; self-owned</dd></div>
+            <div class="spec-list__row">
+              <dt>Type</dt>
+              <dd>Oil tanker vessels</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>Fleet size</dt>
+              <dd data-fleet="marine-fleet-size">14 vessels</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>Capacity range</dt>
+              <dd data-fleet="marine-capacity">≈ 350,000 L to 3 million L</dd>
+            </div>
+            <div class="spec-list__row">
+              <dt>Ownership</dt>
+              <dd data-fleet="marine-ownership">Chartered &amp; self-owned</dd>
+            </div>
           </dl>
         </div>
       </div>
@@ -94,28 +130,32 @@
       </div>
       <ul class="vessels" id="vessel-list">
         <li class="vessel-card">
-          <div class="vessel-card__media"><img src="assets/img/gallery-6.jpg" alt="The Emerald Unity tanker at anchor" loading="lazy"></div>
+          <div class="vessel-card__media"><img src="assets/img/gallery-6.jpg" alt="The Emerald Unity tanker at anchor"
+              loading="lazy"></div>
           <div class="vessel-card__body">
             <h3 class="vessel-card__name">Emerald Unity</h3>
             <p class="vessel-card__spec">2,772.29 Load Capacity &ndash; DWT (metric tons)</p>
           </div>
         </li>
         <li class="vessel-card">
-          <div class="vessel-card__media"><img src="assets/img/gallery-5.jpg" alt="The Bandai Glory tanker at sea" loading="lazy"></div>
+          <div class="vessel-card__media"><img src="assets/img/gallery-5.jpg" alt="The Bandai Glory tanker at sea"
+              loading="lazy"></div>
           <div class="vessel-card__body">
             <h3 class="vessel-card__name">Bandai Glory</h3>
             <p class="vessel-card__spec">1,411 Load Capacity &ndash; DWT (metric tons)</p>
           </div>
         </li>
         <li class="vessel-card">
-          <div class="vessel-card__media"><img src="assets/img/gallery-4.jpg" alt="The Emerald Energy 3 tanker at sea" loading="lazy"></div>
+          <div class="vessel-card__media"><img src="assets/img/gallery-4.jpg" alt="The Emerald Energy 3 tanker at sea"
+              loading="lazy"></div>
           <div class="vessel-card__body">
             <h3 class="vessel-card__name">Emerald Energy 3</h3>
             <p class="vessel-card__spec">1,233 Load Capacity &ndash; DWT (metric tons)</p>
           </div>
         </li>
         <li class="vessel-card">
-          <div class="vessel-card__media"><img src="assets/img/gallery-3.jpg" alt="The Warrior 8 tanker at anchor" loading="lazy"></div>
+          <div class="vessel-card__media"><img src="assets/img/gallery-3.jpg" alt="The Warrior 8 tanker at anchor"
+              loading="lazy"></div>
           <div class="vessel-card__body">
             <h3 class="vessel-card__name">Warrior 8</h3>
             <p class="vessel-card__spec">2,303.79 Load Capacity &ndash; DWT (metric tons)</p>
@@ -145,12 +185,18 @@
         <h2 class="section-title" id="gallery-title">Our fleets at work.</h2>
       </div>
       <ul class="gallery">
-        <li class="gallery__item"><img src="assets/img/gallery-1.jpg" alt="Tanker vessels in port at dusk" loading="lazy" data-photo="gallery_photo_1"></li>
-        <li class="gallery__item"><img src="assets/img/gallery-2.jpg" alt="Tanker vessel at anchor" loading="lazy" data-photo="gallery_photo_2"></li>
-        <li class="gallery__item"><img src="assets/img/gallery-3.jpg" alt="Tanker vessel at sea" loading="lazy" data-photo="gallery_photo_3"></li>
-        <li class="gallery__item"><img src="assets/img/gallery-4.jpg" alt="Tanker vessel at sea" loading="lazy" data-photo="gallery_photo_4"></li>
-        <li class="gallery__item"><img src="assets/img/gallery-5.jpg" alt="Tanker vessel under a blue sky" loading="lazy" data-photo="gallery_photo_5"></li>
-        <li class="gallery__item"><img src="assets/img/gallery-6.jpg" alt="Red-hulled tanker vessel underway" loading="lazy" data-photo="gallery_photo_6"></li>
+        <li class="gallery__item"><img src="assets/img/gallery-1.jpg" alt="Tanker vessels in port at dusk"
+            loading="lazy" data-photo="gallery_photo_1"></li>
+        <li class="gallery__item"><img src="assets/img/gallery-2.jpg" alt="Tanker vessel at anchor" loading="lazy"
+            data-photo="gallery_photo_2"></li>
+        <li class="gallery__item"><img src="assets/img/gallery-3.jpg" alt="Tanker vessel at sea" loading="lazy"
+            data-photo="gallery_photo_3"></li>
+        <li class="gallery__item"><img src="assets/img/gallery-4.jpg" alt="Tanker vessel at sea" loading="lazy"
+            data-photo="gallery_photo_4"></li>
+        <li class="gallery__item"><img src="assets/img/gallery-5.jpg" alt="Tanker vessel under a blue sky"
+            loading="lazy" data-photo="gallery_photo_5"></li>
+        <li class="gallery__item"><img src="assets/img/gallery-6.jpg" alt="Red-hulled tanker vessel underway"
+            loading="lazy" data-photo="gallery_photo_6"></li>
       </ul>
     </section>
 
@@ -163,4 +209,5 @@
 
   <div data-include="partials/footer.html"></div>
 </body>
+
 </html>
