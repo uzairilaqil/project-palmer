@@ -62,6 +62,9 @@ async function loadSiteSettings() {
     setFleet("land-incoming", `${acf.land_incoming} additional units, ${acf.land_incoming_when}`);
   }
   setFleet("land-use", acf.land_use);
+  setFleet("land-type", acf.land_type);
+  setFleet("land-description", acf.land_description);
+  if (acf.land_caption) setFleet("land-caption", acf.land_caption);
 
   if (acf.marine_vessels) {
     setFleet("marine-count", `${acf.marine_vessels}`);
@@ -70,6 +73,9 @@ async function loadSiteSettings() {
   if (acf.marine_ownership) {
     setFleet("marine-caption", `Oil/Chemical tankers (${acf.marine_ownership})`);
   }
+  if (acf.marine_caption) setFleet("marine-caption", acf.marine_caption);
+  setFleet("marine-type", acf.marine_type);
+  setFleet("marine-description", acf.marine_description);
   setFleet("marine-capacity", acf.marine_capacity);
   setFleet("marine-ownership", acf.marine_ownership);
 }
