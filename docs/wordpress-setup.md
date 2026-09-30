@@ -193,9 +193,15 @@ published, the Our Fleets page keeps its built-in list of 6.
 | Land Fleet: Incoming Units | `land_incoming` | Number | `4` |
 | Land Fleet: Incoming When | `land_incoming_when` | Text | `Q4 2025` |
 | Land Fleet: Operational Use | `land_use` | Text | `Industrial, commercial & project delivery` |
+| Land Fleet: Caption (optional) | `land_caption` | Text | `Land fuel transporters (4 more expected Q4 2025)` |
+| Land Fleet: Type | `land_type` | Text | `Land fuel transporter trucks` |
+| Land Fleet: Description | `land_description` | Text Area | `A fleet of land fuel transporter trucks of various sizes...` |
 | Marine Fleet: Vessels | `marine_vessels` | Number | `14` |
 | Marine Fleet: Capacity Range | `marine_capacity` | Text | `≈ 350,000 L to 3 million L` |
 | Marine Fleet: Ownership | `marine_ownership` | Text | `Chartered & self-owned` |
+| Marine Fleet: Caption (optional) | `marine_caption` | Text | `Oil/Chemical tankers (chartered & self-owned)` |
+| Marine Fleet: Type | `marine_type` | Text | `Oil/Chemical tankers` |
+| Marine Fleet: Description | `marine_description` | Text Area | `Oil/Chemical tankers of different classes...` |
 
 > Fields left empty show the design's placeholder text (e.g. "[PHONE — CLIENT TO PROVIDE]") on the website, so nothing breaks while waiting for the client.
 
