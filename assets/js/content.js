@@ -250,10 +250,11 @@ async function loadLeaders() {
 function leaderHtml(post) {
   const a = post.acf || {};
   const title = WP.decode(post.title.rendered);
-  const img = WP.image(post) || "assets/img/avatar-placeholder.svg";
+  const img = WP.image(post);
+  const avatar = img ? `<img class="leader__avatar" src="${img}" alt="" width="52" height="52">` : "";
   return `
     <li class="leader">
-      <img class="leader__avatar" src="${img}" alt="" width="52" height="52">
+      ${avatar}
       <h3 class="leader__name">${WP.escape(title)}</h3>
       <p class="leader__role">${WP.escape(a.role || "")}</p>
       <p class="leader__bio">${WP.escape(a.bio || "")}</p>
