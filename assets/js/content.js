@@ -68,7 +68,7 @@ async function loadSiteSettings() {
     setFleet("marine-fleet-size", `${acf.marine_vessels} vessels`);
   }
   if (acf.marine_ownership) {
-    setFleet("marine-caption", `Oil tanker vessels (${acf.marine_ownership})`);
+    setFleet("marine-caption", `Oil/Chemical tankers (${acf.marine_ownership})`);
   }
   setFleet("marine-capacity", acf.marine_capacity);
   setFleet("marine-ownership", acf.marine_ownership);
