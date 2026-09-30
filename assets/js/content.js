@@ -90,7 +90,7 @@ async function loadVacancies() {
   if (posts === null) return; // WordPress unreachable: keep the example vacancies.
 
   if (posts.length === 0) {
-    list.innerHTML = `<p style="padding-block:26px;color:var(--text-slate)">No open positions right now. Please check back soon.</p>`;
+    list.innerHTML = `<p style="padding-block:26px;color:var(--text-slate)">No open positions available right now. You're welcome to submit a general application or email us your resume, and we'll reach out when a suitable role opens.</p><a class="btn btn--orange" href="#apply-title">Submit an Application&nbsp;&nbsp;→</a>`;
     return;
   }
   list.innerHTML = posts.map(vacancyHtml).join("");

@@ -152,3 +152,53 @@ After publishing, open `https://palmershipping.com` and check:
 - **About:** 4 leaders under "Experienced leadership".
 
 If a change doesn't show after a few minutes, go to hPanel → Performance → CDN and click **Flush cache** on the `cms.palmershipping.com` row.
+
+
+
+Here's an honest check against each item:
+
+1. Google Search Console — not done, and can't be done yet
+This is a manual step the client does at search.google.com/search-console, verifying ownership of palmershipping.com and submitting the sitemap. It can't happen until the site is live on the real domain — right now it's on Coming Soon publicly and only the preview subdomain has the real pages, which is deliberately blocked from search engines. This is a launch-day task, not a code task.
+
+2. XML sitemap — done, but not active yet
+sitemap.xml exists and lists all 6 pages with the palmershipping.com addresses already in it. It's sitting in the project folder but hasn't been uploaded anywhere yet, because it should only go on the live site, not the preview (the preview must stay hidden from Google). Upload it when you go live.
+
+3. Page optimization for target keywords — partly done, needs your input
+Each page has a distinct title, description and one clear H1, which is the basic structural part. What's missing is the actual keyword strategy — I don't know what terms the client wants to rank for (e.g. "marine fuel bunkering Sarawak", "diesel supplier Miri", "fuel transporter Borneo"). Right now the wording is written for clarity, not chosen for search volume. This needs a decision from you/the client on target phrases, then I'd weave them naturally into headings and body text.
+
+4. Meta titles and descriptions — done
+All 6 pages have unique titles and descriptions:
+
+Page	Title
+Home	Palmer Petroleum | Energy Logistics in Miri, Sarawak
+About	About Us | Palmer Petroleum
+Services	Services | Palmer Petroleum
+Fleet	Our Fleets | Palmer Petroleum
+Careers	Careers | Palmer Petroleum
+Contact	Contact Us | Palmer Petroleum
+Summary: Technically 2 of 4 are fully done (sitemap file, meta tags), 1 is structurally ready but needs a keyword list from the client, and 1 (Search Console) is a launch-day action, not something in the code.
+
+
+What those 5 emails are
+
+Hostinger's hosting plan includes email hosting — mailboxes on your own domain, like info@palmershipping.com or bunker@palmerpetroleum.com. Your plan lets you create up to 5 such mailboxes. They're separate from your website files; they just live on Hostinger's mail servers and use your domain name after the @.
+
+You access them either through Hostinger's webmail (in hPanel → Emails) or by adding them to an email app (Outlook, the Gmail app, etc.) using IMAP/SMTP settings Hostinger gives you.
+
+Is it the same as a Google/Gmail account?
+
+No. A Gmail address (something@gmail.com) is a Google account. A Hostinger mailbox (something@palmershipping.com) is hosted by Hostinger, not Google. They're different systems, even though you can read a Hostinger mailbox's mail from within a Gmail-style inbox app if you set up forwarding or IMAP.
+
+Right now your Contact Form 7 emails go to a personal Gmail (mentioned earlier in this project) — that should eventually be switched to one of these @palmershipping.com mailboxes once the client decides which address to use.
+
+Can a Hostinger mailbox be used to set up Google Business Profile?
+
+Yes, that part is fine — Google Business Profile doesn't require a Gmail address for the business email shown on the listing. You can use info@palmershipping.com publicly.
+
+But the account that owns/manages the listing must be an actual Google account (Gmail or Google Workspace). That's just how Google Business Profile works — it's built on Google's login system.
+
+Two ways to satisfy that:
+
+Simplest: create one free Gmail account for the business, e.g. palmerpetroleumsdnbhd@gmail.com, use it only to log into Google Business Profile (and Google Search Console, Google Ads, Analytics, etc. later). Nobody needs to actually use it as a real inbox.
+More proper for a company: use Google Workspace, which turns info@palmershipping.com into a real Gmail-powered inbox with a Google login. That costs extra (~RM26–30+/user/month) and is a separate product from Hostinger's free mailboxes.
+My recommendation: start with option 1 (free Gmail account owned by the client, not you) to claim the Business Profile now, and use a Hostinger mailbox like info@palmershipping.com as the public-facing email shown on the listing and the website. Upgrade to Google Workspace later only if the client wants @palmershipping.com to work as Gmail day-to-day.
